@@ -1,5 +1,7 @@
 package Ejercicio1;
 
+import javax.swing.JOptionPane;
+
 public class Empleado {
 	
 	private String nombre;
@@ -44,5 +46,38 @@ public class Empleado {
 				+ desempeño + "]";
 	}
 	
+	public	double bonoXdesempenio() {
+		double bono=0;
+		if (this.desempeño.equals("Bueno")) {
+			bono = this.sueldoBase*0.10;
+			JOptionPane.showMessageDialog(null, "Tuvo bono por buen desempeño de 10% $" + bono);
+		}else if (this.desempeño.equals("Regular")) {
+			bono = 80;
+			JOptionPane.showMessageDialog(null, "Tuvo bono por desempeño regular de $80 ");
+		}else {
+			JOptionPane.showMessageDialog(null, "No tuvo bono por mal desempeño");
+		}
+		return bono;
+	}
+	public	double bonoXpresentismo() {
+		double bono=0;
+		if (this.diasFalto==0) {
+			bono = 100;
+			JOptionPane.showMessageDialog(null, "No faltó nunca, corresponde $100");
+		}else if (this.diasFalto==1) {
+			bono = 50;
+			JOptionPane.showMessageDialog(null, "No faltó nunca, corresponde $50");
+		}else {
+			JOptionPane.showMessageDialog(null, "No tuvo bono");
+		}
+		return bono;
+	}
+	public void CalcularBonos() {
+		
+		double total = this.bonoXdesempenio() + this.bonoXpresentismo() + this.sueldoBase;
+		
+		JOptionPane.showMessageDialog(null, "El empleado " + this.getNombre() + " tuvo un sueldo base de " + this.sueldoBase + " más los bonos queda en " + total);
+		
+	}
 
 }
