@@ -10,8 +10,10 @@ public class Main {
 		Alumno juan = new Alumno("Juan","Juan@gmail.com","4321","1",poo);
 	//	String mail = JOptionPane.showInputDialog("Ingrese mail");
 		//String contrasenia = JOptionPane.showInputDialog("Ingrese contrasenia");
-		yo.Login("ghami@gmail.com","1234" );
-		juan.Login("Juan@gmail.com","4321");
+		//yo.Login("ghami@gmail.com","1234" );
+		//juan.Login("Juan@gmail.com","4321");
+		poo.GenerarNotas();
+		poo.MostrarCurso();
 	}
 
 }

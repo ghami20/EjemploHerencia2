@@ -35,6 +35,21 @@ public class Alumno extends Usuario{
 	}
 	/**
 	 * LOGIN DE ALUMNO*/
+	
+	public boolean RendirExamen() {
+		
+		int nota = (int)(Math.random()*10+1);
+		if (nota<4) {
+			JOptionPane.showMessageDialog(null, "Desapruebo");
+			return false;
+		}else {
+			JOptionPane.showMessageDialog(null, "Apruebo");
+
+			return true;
+			
+		}
+	}
+
 	@Override
 	public boolean Login(String email,String contrasenia) {
 		if (this.mail.equals(email) && this.getContrasenia().equals(contrasenia)) {
@@ -69,19 +84,6 @@ public class Alumno extends Usuario{
 			JOptionPane.showMessageDialog(null, "No ingresó");
 			return false;
 
-		}
-	}
-	public boolean RendirExamen() {
-		
-		int nota = (int)(Math.random()*10+1);
-		if (nota<4) {
-			JOptionPane.showMessageDialog(null, "Desapruebo");
-			return false;
-		}else {
-			JOptionPane.showMessageDialog(null, "Apruebo");
-
-			return true;
-			
 		}
 	}
 
