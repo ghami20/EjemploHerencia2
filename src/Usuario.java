@@ -1,9 +1,9 @@
 import javax.swing.JOptionPane;
 
 public class Usuario {
-	private String nombre;
-	private String mail;
-	private String contrasenia;
+	protected String nombre;
+	protected String mail;
+	protected String contrasenia;
 	public Usuario(String nombre, String mail, String contrasenia) {
 		this.nombre = nombre;
 		this.mail = mail;
@@ -34,7 +34,7 @@ public class Usuario {
 	
 	public boolean Login(String email,String contrasenia) {
 		if (this.mail.equals(email) && this.contrasenia.equals(contrasenia)) {
-			JOptionPane.showMessageDialog(null, "Ingresó");
+			JOptionPane.showMessageDialog(null, "Ingresó usuario(?)");
 			return true;
 			
 		}else {
@@ -42,8 +42,6 @@ public class Usuario {
 			return false;
 
 		}
-		
-		
 	}
 	
 }
